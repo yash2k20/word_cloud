@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Word Cloud Generator</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body id="container">
+    <h1> வேர்ட் கிளவுட் ஜெனரேட்டர்</h1>
+    <div class="row">
+      <div class="custom-container">
+        <div class="instructions">
+          <p class="tool-header"> இங்கே எழுதுங்கள் :</p>
+          <p>உங்கள் இலவச வார்த்தை உருவாக்க உங்கள் உரையை தட்டச்சு செய்யவும்</p>
+        </div> 
+        <div class="input-group">
+            <textarea class="form-control" aria-label="With textarea" id="input-text"></textarea>
+          </div> 
+      </div>
+      <div class="settings custom-container">
+        <div class="instructions">
+          <p class="tool-header">மாறுபாடுகள் </p>
+          <p>கீழே உள்ள விருப்பங்களுடன் உங்கள் இலவச வார்த்தை மேகக்கணியைத் தனிப்பயனாக்குங்கள்</p>
+        </div>
+        <div class="options">
+          <div class="color-picker">
+              <p class="tool-header"> வண்ண திட்டம் : </p>
+              <div class="radio">
+                <label class="radio-container">இயல்புநிலை
+                  <input type="radio" checked="checked" value="Default" name="colorScheme">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="radio-container">கூல்
+                  <input type="radio" value="Cool" name="colorScheme">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="radio-container">இயற்கை
+                  <input type="radio" value="Nature" name="colorScheme">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="radio-container">வைப்ரன்
+                  <input type="radio" value="Vibrant" name="colorScheme">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="radio-container">டெலிசெட்
+                  <input type="radio" value="Delicate" name="colorScheme">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="radio-container">பேச்
+                  <input type="radio" value="Beach" name="colorScheme">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="radio-container">ஆட்டம்
+                  <input type="radio" value="Autumn" name="colorScheme">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="radio-container">பனி
+                  <input type="radio" value="Ice" name="colorScheme">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="radio-container">சிட்ரஸ்
+                  <input type="radio" value="Citrus" name="colorScheme">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+          <div class="other-settings">
+            <div class="right-settings">
+              <div class="radio">
+                <p class="tool-header"> முறைகள் :</p>
+                <label class="radio-container">சுழல்
+                  <input type="radio" checked="checked" value="Spiral" name="mode">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="radio-container">செவ்வகம்
+                  <input type="radio" value="Rectangle" name="mode">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="radio scales">
+                <p class="tool-header"> செதில்கள்: </p>
+                <label class="radio-container">நேரியல்
+                  <input type="radio" checked="checked" value="Linear" name="scales">
+                  <span class="checkmark" ></span>
+                </label>
+                <label class="radio-container">மடக்கை
+                  <input type="radio" value="Logarithmic" name="scales">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+            <p class="second-setting" class="tool-header">வார்த்தைகள் இடைவெளி</p>
+            <input type="range" min="1" max="30" value="1" class="slider" id="myRange">
+            <p class="tool-header">மதிப்பு: <span id="display"></span></p>
+            <button class="button" id="generate">உருவாக்கு</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="cloud-container"></div>
+
+    <!-- AnyChart Base Script -->
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <!-- AnyChart Word Cloud Script -->
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+    
+    <script src="script.js"></script>
+    
+  </body>
+</html>
